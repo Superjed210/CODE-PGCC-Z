@@ -4,182 +4,100 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="HomeStyle.css">
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="pgMap_Style.css">
 </head>
+
 
 <body class="bg-dark mt-2">
 
 <div class="container">
+    <!-- Nav Bar  & Cards 1-3 -->
     <div class="row g-4">
+        <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg jb-nav">
-            <div class="container">
-
+            <div class="container d-flex justify-content-center">
                 <!-- Logo -->
-                <a class="navbar-brand jb-brand" href="Home.html"> <img src="Pics/symbol_logo_web.png" height="46.35" width="60"/></a>
-
-                <!-- Mobile toggle -->
-                <button class="navbar-toggler jb-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon jb-icon"></span>
-                </button>
-
-                <!-- Nav links -->
-                <div class="collapse navbar-collapse " id="mainNav">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                        <li class="nav-item">
-                            <a class="nav-link jb-link active" href="#">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link jb-link" href="#">Projects</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link jb-link" href="#">Events</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link jb-link" href="#">Team</a>
-                        </li>
-
-                        <li class="nav-item align-items-center">
-                            <a class="nav-link jb-btn " href="#">Join Us</a>
-                        </li>
-
-                    </ul>
-                </div>
+                <a class="navbar-brand jb-brand" href="Home.html"> <img src="Pics/wordmark_logo_web.png" height="127" width="500"/></a>
             </div>
         </nav>
-
 
         <!-- Card 1 -->
         <div class="col-md-6 col-lg-4">
             <div class="jb-card h-100">
                 <div class="jb-tag">
-                    <span class="badge bg-primary rounded-pill">AI</span>
-                    AI Assistant
+                    <!-- ><span class="badge bg-primary rounded-pill">AI</span> -->
+                    About Us
                 </div>
-                <h2 class="jb-title">AI for enhanced productivity</h2>
+                <h2 class="jb-title">A Community for Engineers</h2>
                 <p class="mb-0">
-                    Streamline your development workflow with context-aware code
-                    assistance built right into your IDE.
+                    CODE is a student-led club where PGCC students learn, build, and innovate together. We started small and grew into a creative community turning ideas into real projects.
                 </p>
-                <a href="#" class="jb-link">Discover more</a>
             </div>
+
         </div>
 
         <!-- Card 2 -->
         <div class="col-md-6 col-lg-4">
             <div class="jb-card h-100">
-                <div class="jb-tag">
-                    <span class="badge bg-success rounded-pill">Junie</span>
-                    Pair programming
-                </div>
-                <h2 class="jb-title">AI for pair programming</h2>
+                <div class="jb-tag"> Our Work </div>
+                <h2 class="jb-title">Engineering Support and Impact</h2>
                 <p class="mb-0">
-                    Let your AI teammate help with planning, refactoring, and testing
-                    so you can focus on ideas and architecture.
+                    We host engineering workshops, collaborative projects and challenges. CODE also participates in Community Service aiming to make a positive impact on and off campus.
                 </p>
-                <a href="#" class="jb-link">Learn more</a>
             </div>
         </div>
 
         <!-- Card 3 -->
         <div class="col-md-6 col-lg-4">
             <div class="jb-card h-100">
-                <div class="jb-tag">
-                    <span class="badge bg-info rounded-pill">YouTrack</span>
-                    Team efficiency
-                </div>
-                <h2 class="jb-title">AI for team efficiency</h2>
+                <div class="jb-tag"> PGCC </div>
+                <h2 class="jb-title">Proudly Representing PGCC</h2>
                 <p class="mb-0">
-                    Turn issues, comments, and docs into actionable tasks with smart
-                    summaries and suggestions.
+                    We’re honored to be part of Prince George's Community College, a college dedicated to opportunity and student success.
                 </p>
-                <a href="#" class="jb-link">Get for free</a>
+                <a href="https://www.pgcc.edu/about-pgcc/" class="jb-link">More About PGCC</a>
             </div>
         </div>
 
-        <!-- (Add more cards as needed) -->
-
     </div>
-    <div class="row g-4 jb-card" style="margin-top: 50px;">
-        <h3>YO MOMA</h3>
+
+    <!-- Map -->
+    <div class="row g-4 map-box" style="margin-top: 40px;">
+        <h2>PGCC INTERACTIVE MAP</h2>
         <div class="container mt-4">
-            <svg viewBox="0 0 1525 1080"xmlns="http://www.w3.org/2000/svg">
 
-                <!-- Simple styles -->
-                <style>
-                    .bg       { fill: #bfe2f5; }   /* light blue */
-                    .building { fill: #0c4a85; }   /* dark blue */
-                    .bubble   { fill: #ffffff; }
-                    .road     {
-                        fill: none;
-                        stroke: #ffffff;
-                        stroke-width: 53;
-                        stroke-linejoin: round;
-                        stroke-linecap: round;
-                    }
-                    .num {
-                        fill: #0c4a85;
-                        font: 60px system-ui, sans-serif;
-                        text-anchor: middle;
-                        dominant-baseline: middle;
-                    }
-                </style>
+            <!-- Backdrop -->
+            <div id="backdrop" class="d-none"></div>
 
+            <!-- Map SVG  Fetch -->
+            <div id="map-container"></div>
+            <!-- <script>
+                fetch("Pics/test1-map.svg")
+                    .then(r => r.text())
+                    .then(svg => {
+                        document.getElementById("map-container").innerHTML = svg;});
+            </script> -->
 
-                <!-- Background -->
-                <rect class="bg" x="0" y="0" width="1525" height="1080" />
+            <!-- Info Panel -->
+            <div id="panel" class="card text-light d-none">
+                <div class="card-body p-0">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <small>Selected location</small>
+                            <h4 id="tab-title">Tap a bubble</h4>
+                        </div>
+                        <button type="button" class="btn-close" aria-label="Close" id="close-tab"></button>
+                    </div>
+                    <p id="tab-desc" class="mt-2 mb-0">
+                        Click any numbered bubble on the map to see details about that building here.
+                    </p>
+                </div>
+            </div>
 
-                <!-- Road (same path as Illustrator export, but without clips/classes) -->
-                <path
-                        class="road"
-                        d="M104.6,0.1
-       V550.4
-       c0,13.3,10.7,24,24,24h661.3
-       c13.3,0,24-10.7,24-24V152.4
-       c0-13.3,10.7-24,24-24h470.2
-       c13.3,0,24,10.7,24,24v240
-       c0,13.3,10.7,24,24,24h168.5" />
-
-                <!-- ===== Building 1 ===== -->
-                <!-- Rounded square -->
-                <rect class="building" x="267.8" y="151.9"
-                      width="323.9" height="323.9" rx="40" />
-
-                <!-- White circle with number -->
-                <g class="bub">
-                    <circle class="bubble" cx="429.8" cy="313.9" r="48.9" />
-                    <text class="num " x="429.8" y="313.9">1</text>
-                </g>
-
-                <!-- ===== Building 2 ===== -->
-                <rect class="building" x="144.2" y="648"
-                      width="323.9" height="323.9" rx="40" />
-
-                <circle class="bubble" cx="306.2" cy="809.9" r="48.9" />
-                <text class="num" x="306.2" y="809.9">2</text>
-
-                <!-- ===== Building 3 (triangle) ===== -->
-                <polygon class="building"
-                         points="1062.8,172.2 1224.8,455.6 900.8,455.6" />
-
-                <circle class="bubble" cx="1062.8" cy="345.8" r="48.9" />
-                <text class="num" x="1062.8" y="345.8">3</text>
-
-                <!-- ===== Building 4 ===== -->
-                <rect class="building" x="1062.8" y="604.2"
-                      width="323.9" height="323.9" />
-
-                <circle class="bubble" cx="1224.8" cy="766.1" r="48.9" />
-                <text class="num" x="1224.8" y="766.1">4</text>
-
-            </svg>
         </div>
     </div>
 
-<script src = https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js> </script>
+    <script src = HomeScript.js > </script>
 
 </body>
 
